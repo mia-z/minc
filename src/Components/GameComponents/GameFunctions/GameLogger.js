@@ -3,13 +3,13 @@ export class GameLogger {
         this.history = history;
         this.setHistory = setHistory;
     }
-    addMessageToLog = (msg, tick) => {
+    addMessageToLog = (msg) => {
         let logs = this.history;
         if (logs.length === 20) {
             logs.pop();
         }
         logs.unshift(msg);
-        this.setHistory(l => l + logs);
+        this.setHistory(logs);
     }
 }
 

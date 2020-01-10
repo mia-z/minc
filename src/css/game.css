@@ -1,5 +1,5 @@
 div.game-root {
-    max-width: 700px;
+    max-width: 600px;
     max-height: 800px;
 }
 
@@ -7,6 +7,20 @@ div.game-root {
     position: relative;
     background-color: blueviolet;
     width: 300px;
+    height: 400px;
+}
+
+.half-height-box {
+    position: relative;
+    background-color: blueviolet;
+    width: 300px;
+    height: 200px;
+}
+
+.wide-box {
+    position: relative;
+    background-color: blueviolet;
+    width: 600px;
     height: 400px;
 }
 

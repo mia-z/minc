@@ -7,7 +7,7 @@ import GameRoot from "../GameComponents/GameRoot";
 import "../../css/main-menu.css";
 
 const MenuRoot = () => {
-    const [menuChoice, setMenuChoice] = useState(1);
+    const [menuChoice, setMenuChoice] = useState(0);
 
     switch (menuChoice) {
         default:

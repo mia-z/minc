@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Col, Row, Button } from "react-bootstrap";
 
 const DeleteView = (props) => {
     const [details, setDetails] = useState(JSON.parse(localStorage.getItem("charData")));
-    useEffect(() => {
+    const deleteChar = () => {
         localStorage.removeItem("charData");
-        console.log(details);
-    });
+        setDetails(null);
+    }
     if (details == null)
      return(
         <div className="menu-root">
@@ -37,7 +37,7 @@ const DeleteView = (props) => {
             </Row>
             <Row className="justify-content-center">
                 <Col md={4}>
-                    <Button variant="primary" block className="my-1" onClick={() => setDetails(null)}>Delete</Button>
+                    <Button variant="primary" block className="my-1" onClick={() => deleteChar()}>Delete</Button>
                 </Col>
             </Row>
             <Row className="justify-content-center">

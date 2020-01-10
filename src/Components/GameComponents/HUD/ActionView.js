@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { Locations } from "./../GameVars/Locations";
-
 import "../../../css/game.css";
 
-const ActionView = props => {
+const ActionView = (props) => {
     const [action, setAction] = useState(props.action);
     const [currentLocation, setCurrentLocation] = useState(props.currentLocation);
     const actionButtons = [
@@ -18,38 +17,45 @@ const ActionView = props => {
         setCurrentLocation(props.currentLocation);
     }, [props.action, props.currentLocation]);
 
+    const handleLocationButtonClick = key => {
+        props.setCurrentLocation(key);
+    }
+
+    const handleActionButtonClick = key => {
+        props.setAction(key);
+    }
+
     switch(action) {
         case 0: return(
             <>
-            <div className="box">
+            <div className="wide-box">
                 <div id="action-box">
                     {
                         locs.map((loc, key, arr) => (
-                            <Button key={key} variant={currentLocation === key ? "secondary" : "primary"} className="m-2" onClick={() => props.setCurrentLocation(key)}>{loc}</Button>
+                            <Button key={key} variant={currentLocation === key ? "secondary" : "primary"} className="m-2" onClick={() => handleLocationButtonClick(key) }>{loc}</Button>
                         ))
                     }
                 </div>
                 <div id="action-bar">
                     {
                         actionButtons.map((button, key, arr,) => (
-                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => props.setAction(key)}>{button}</Button>
+                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => handleActionButtonClick(key)}>{button}</Button>
                         ))
                     }
                 </div>
             </div>
             </>
         );
-
         case 1: return(
             <>
-            <div className="box">
+            <div className="wide-box">
                 <div id="action-box">
-                    1
+                    shop
                 </div>
                 <div id="action-bar">
                     {
                         actionButtons.map((button, key, arr,) => (
-                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => props.setAction(key)}>{button}</Button>
+                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => handleActionButtonClick(key)}>{button}</Button>
                         ))
                     }
                 </div>
@@ -59,14 +65,14 @@ const ActionView = props => {
 
         case 2: return(
             <>
-            <div className="box">
+            <div className="wide-box">
                 <div id="action-box">
-                    2
+                    heal
                 </div>
                 <div id="action-bar">
                     {
                         actionButtons.map((button, key, arr,) => (
-                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => props.setAction(key)}>{button}</Button>
+                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => handleActionButtonClick(key)}>{button}</Button>
                         ))
                     }
                 </div>
@@ -76,14 +82,14 @@ const ActionView = props => {
 
         case 3: return(
             <>
-            <div className="box">
+            <div className="wide-box">
                 <div id="action-box">
-                    3
+                    stats
                 </div>
                 <div id="action-bar">
                     {
                         actionButtons.map((button, key, arr,) => (
-                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => props.setAction(key)}>{button}</Button>
+                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => handleActionButtonClick(key)}>{button}</Button>
                         ))
                     }
                 </div>
@@ -93,14 +99,14 @@ const ActionView = props => {
 
         default: return(
             <>
-            <div className="box">
+            <div className="wide-box">
                 <div id="action-box">
-                    default
+                    YOU SHOULDNT BE HERE REEEEEEEEEEEEEEEEE
                 </div>
                 <div id="action-bar">
                     {
                         actionButtons.map((button, key, arr,) => (
-                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => props.setAction(key)}>{button}</Button>
+                            <Button key={key} variant={action === key ? "secondary" : "primary"} className="m-2" onClick={() => handleActionButtonClick(key)}>{button}</Button>
                         ))
                     }
                 </div>
@@ -108,8 +114,6 @@ const ActionView = props => {
             </>
         );
     }
-
-    
 }
 
 export default ActionView;

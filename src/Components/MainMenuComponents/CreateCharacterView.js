@@ -10,6 +10,8 @@ const CreateCharacterView = (props) => {
         gold: "",
         currentHp: 10,
         Hp: 10,
+        Attack: 1,
+        Defence: 1,
         
     });
     

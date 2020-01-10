@@ -1,42 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Row, Col } from "react-bootstrap";
 import "../../../css/game.css";
 
 const EnemyView = props => {
-    const [enemyData, setEnemyData] = useState({
-        Name: props.enemy.name,
-        Level: props.enemy.level,
-        Health: props.enemy.eHp,
-        Attack: props.enemy.attack,
-        Defence: props.enemy.defence
-    });
-    useEffect(() => {
-        setEnemyData({
-            Name: props.enemy.name,
-            Level: props.enemy.level,
-            Health: props.enemy.eHp,
-            Attack: props.enemy.attack,
-            Defence: props.enemy.defence
-        });
-    }, [props.enemy.name, props.enemy.level, props.enemy.eHp, props.enemy.attack, props.enemy.defence]);
-    
     return(
-        <>
-        <div className="box">
-            {
-                Object.keys(enemyData).map((item, key) => (
-                    <Row key={key}>
-                        <Col md={4}>
-                            <h5>{item}:&nbsp;</h5>
-                        </Col>
-                        <Col>
-                            <p>{enemyData[item]}</p>
-                        </Col>
-                    </Row>
-                ))
-            }
+        <div className="half-height-box">
+            <Row>
+                <Col md={4}>
+                    <h5>Name:&nbsp;</h5>
+                </Col>
+                <Col>
+                    <p>{props.enemy.name}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={4}>
+                    <h5>Level:&nbsp;</h5>
+                </Col>
+                <Col>
+                    <p>{props.enemy.level}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={4}>
+                    <h5>Health:&nbsp;</h5>
+                </Col>
+                <Col>
+                    <p>{props.enemy.eHp}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={4}>
+                    <h5>Attack:&nbsp;</h5>
+                </Col>
+                <Col>
+                    <p>{props.enemy.attack}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col md={4}>
+                    <h5>Defence:&nbsp;</h5>
+                </Col>
+                <Col>
+                    <p>{props.enemy.defence}</p>
+                </Col>
+            </Row>
         </div>
-        </>
     );
 }
 

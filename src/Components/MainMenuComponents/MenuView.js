@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row, Button } from "react-bootstrap";
 
 const MenuView = (props) => {
-    let hideButton = JSON.parse(localStorage.getItem("charData")) == null ? {disabled: true} : {disabled: false};
+    let hideButton = JSON.parse(localStorage.getItem("charData")) == undefined ? {disabled: true} : {disabled: false};
     return(
         <div className="menu-root">
             <Row className="justify-content-center">

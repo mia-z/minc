@@ -31,7 +31,22 @@ export const RandomNumber = (min, max) => {
 }
 
 export const CheckLevelUp = (level, xp) => {
-    if (xp >= XpTable[level + 1])
+    if (xp >= XpTable[level + 1]) {
+        setLevellingUp(true);
         return true; 
+    }
     else return false;
+}
+
+export const CheckIfDataExists = () => {
+    return localStorage.getItem("charData") === undefined ? false : true;
+}
+
+export const IsLevellingUp = () => {
+    console.log(localStorage.getItem("levelLock"));
+    return localStorage.getItem("levelLock") === null ? false : true;
+}
+
+export const setLevellingUp = (x) => {
+    x ? localStorage.setItem("levelLock", "0") : localStorage.removeItem("levelLock");
 }

@@ -1,4 +1,4 @@
-import { GetLocation, Locations } from "./../GameVars/Locations";
+import { GetLocation } from "./../GameVars/Locations";
 import { RandomNumber } from "./../../../global";
 
 export const CreateEnemy = (enemyDead, setEnemy, setEnemyDead, currentLocation) => {
@@ -12,8 +12,9 @@ export const CreateEnemy = (enemyDead, setEnemy, setEnemyDead, currentLocation) 
                 clone[key] = item[key];
             });
             return clone;
-        } else return;
+        } else return null;
     });
+    console.log(mob);
     setEnemy(mob[rand]);
     setEnemyDead(false);
 }
