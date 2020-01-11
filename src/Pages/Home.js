@@ -1,9 +1,12 @@
-import react from "react";
+import React from "react";
+import MenuRoot from "../Components/MainMenuComponents/MenuRoot";
 
-export default Home = () => {
+const Home = () => {
     return(
         <>
-        Home
+        <MenuRoot />
         </>
     )
 }
+
+export default Home;

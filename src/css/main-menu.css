@@ -1,0 +1,13 @@
+div.menu-root {
+    max-width: 600px;
+    max-height: 800px;
+}
+
+div.col > h3 {
+    text-align: center;
+}
+
+h5 {
+    color: red;
+    text-align: center;
+}
