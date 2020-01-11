@@ -1,0 +1,81 @@
+div.game-root {
+    max-width: 600px;
+    max-height: 800px;
+}
+
+.box {
+    position: relative;
+    background-color: blueviolet;
+    width: 300px;
+    height: 400px;
+}
+
+.half-height-box {
+    position: relative;
+    background-color: blueviolet;
+    width: 300px;
+    height: 200px;
+}
+
+.wide-box {
+    position: relative;
+    background-color: blueviolet;
+    width: 600px;
+    height: 400px;
+}
+
+#log-box {
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: whitesmoke grey; 
+}
+
+#log-box::-webkit-scrollbar {
+    width: 7px;
+}
+
+#log-box::-webkit-scrollbar-track { 
+    background: none;
+    border-radius: 6px;
+}
+
+#log-box::-webkit-scrollbar-thumb { 
+    background-color: whitesmoke;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+}
+
+#action-bar {
+    position: relative;
+    max-height: 15%;
+    min-height: 15%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: whitesmoke grey; 
+    background-color: green;
+}
+
+#action-bar::-webkit-scrollbar {
+    height: 7px;
+}
+
+#action-bar::-webkit-scrollbar-track { 
+    background: none;
+    border-radius: 6px;
+}
+
+#action-bar::-webkit-scrollbar-thumb { 
+    background-color: whitesmoke;
+    border-radius: 6px;
+    border: 0.5px solid grey;
+}
+
+#action-box {
+    position: relative;
+    max-height: 85%;
+    min-height: 85%;
+    background-color: teal;
+}
