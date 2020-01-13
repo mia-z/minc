@@ -14,7 +14,7 @@ export const CreateEnemy = (enemyDead, setEnemy, setEnemyDead, currentLocation) 
             return clone;
         } else return null;
     });
-    console.log(mob);
+    console.log(mob[rand]);
     setEnemy(mob[rand]);
     setEnemyDead(false);
 }

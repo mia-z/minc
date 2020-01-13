@@ -53,7 +53,8 @@ const LogicRoot = (props) => {
             return;
         }
 
-        Player.PlayerDamage(enemy, setEnemy, enemyDead, setEnemyDead, logger, ticker);
+        if(!enemyDiedThisTick)
+            Player.PlayerDamage(enemy, setEnemy, enemyDead, setEnemyDead, logger, ticker);
 
         Globals.SaveData(charData);
     }

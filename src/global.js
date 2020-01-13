@@ -43,7 +43,6 @@ export const CheckIfDataExists = () => {
 }
 
 export const IsLevellingUp = () => {
-    console.log(localStorage.getItem("levelLock"));
     return localStorage.getItem("levelLock") === null ? false : true;
 }
 
